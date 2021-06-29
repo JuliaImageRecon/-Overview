@@ -5,6 +5,12 @@ The goal of this organization is to collect together repos written in the
 [Julia language](https://julialang.org/)
 that are related to image reconstruction.
 
+Curious about Julia?
+Start with
+[this shorter article in Nature](http://doi.org/10.1038/d41586-019-02310-3)
+and
+[this longer paper in SIAM Review](http://doi.org/10.1137/141000671).
+
 Please contact
 [Jeff Fessler](https://web.eecs.umich.edu/~fessler)
 if you'd like to contribute,
