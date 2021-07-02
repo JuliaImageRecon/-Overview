@@ -1,4 +1,4 @@
-# -Overview
+## JuliaImageRecon/About
 Overview of this organization and related repos
 
 The goal of this organization is to collect together repos written in the
@@ -16,6 +16,12 @@ Please contact
 if you'd like to contribute,
 e.g., become a member.
 Or just start reporting issues and making PRs!
+
+## Repos
+
+* [ImageGeoms.jl](https://github.com/JuliaImageRecon/ImageGeoms.jl) :
+  describe image sampling geometry for image reconstruction
+  (grid dimensions, pixel size, support mask).
 
 ## Plans (WIP)
 
