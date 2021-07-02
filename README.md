@@ -17,6 +17,12 @@ if you'd like to contribute,
 e.g., become a member.
 Or just start reporting issues and making PRs!
 
+## Plans (WIP)
+
+* `ImagePhantoms.jl` Shepp-Logan and much more
+* `Sinograms.jl` Tomographic image reconstruction (FBP)
+* `SPECTRecon.jl` forward and back-projectors for SPECT
+
 ## Related packages / repos
 
 * https://github.com/MagneticResonanceImaging, including
