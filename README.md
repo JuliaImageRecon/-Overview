@@ -23,9 +23,12 @@ Or just start reporting issues and making PRs!
   describe image sampling geometry for image reconstruction
   (grid dimensions, pixel size, support mask).
 
+* [ImagePhantoms.jl](https://github.com/JuliaImageRecon/ImagePhantoms.jl) :
+  Digital image phantoms (like the Shepp-Logan phantom)
+  along with analytical methods for their sinograms and spectra.
+  
 ## Plans (WIP)
 
-* `ImagePhantoms.jl` Shepp-Logan and much more
 * `Sinograms.jl` Tomographic image reconstruction (FBP)
 * `SPECTRecon.jl` forward and back-projectors for SPECT
 
