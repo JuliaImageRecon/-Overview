@@ -31,7 +31,7 @@ collection.
 
 Each of the following code repos include documentation
 that illustrate the Julia code and the output.
-[Here is an example](https://juliaimagerecon.github.io/ImagePhantoms.jl/stable/examples/7-shepp).
+[Here is an example](https://juliaimagerecon.github.io/ImagePhantoms.jl/stable/generated/examples/07-shepp).
 
 * [ImageGeoms.jl](https://github.com/JuliaImageRecon/ImageGeoms.jl) :
   describe image sampling geometry for image reconstruction
