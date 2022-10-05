@@ -40,14 +40,20 @@ that illustrate the Julia code and the output.
 * [ImagePhantoms.jl](https://github.com/JuliaImageRecon/ImagePhantoms.jl) :
   Digital image phantoms (like the Shepp-Logan phantom)
   along with analytical methods for their sinograms and spectra.
-  
+
+* [Sinograms.jl](https://github.com/JuliaImageRecon/Sinograms.jl) :
+  Tomographic image reconstruction.
+  FBP for parallel-beam and fan-beam geometries.
+  FDK for cone-beam computed-tomography CBCT.
+  (Forward and back-projectors for CT are a WIP.)
+
 * [SPECTrecon.jl](https://github.com/JeffFessler/SPECTrecon.jl)
   forward and back-projectors for SPECT
 
 
 ## Plans (WIP)
 
-* `Sinograms.jl` Tomographic image reconstruction (FBP)
+* More iterative reconstruction methods
 
 
 ## Related packages / repos
