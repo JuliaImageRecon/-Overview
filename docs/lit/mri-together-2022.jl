@@ -182,6 +182,19 @@ xh = A \ y # global minimizer of f
 xgd = gd(∇f, α, zeros(N) ; Niter=9000)
 @assert xgd ≈ xh # equivalent within precision of type
 
+#=
+## "Expanding your image reconstruction toolbox"
+
+The mega-package approach of BART/MIRT/ASTRA/... in Matlab, Python, C.
+
+Julia way: "ala carte"
+by `using` methods from various packages.
+
+Chef's recommended menu?
+Documented examples!
+
+=#
+
 
 # ### Reproducibility
 
