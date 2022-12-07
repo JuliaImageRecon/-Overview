@@ -14,7 +14,7 @@ lit = joinpath(@__DIR__, "lit")
 src = joinpath(@__DIR__, "src")
 gen = joinpath(@__DIR__, "src/generated")
 
-base = "$org/$reps.jl"
+base = "$org/$reps"
 repo_root_url =
     "https://github.com/$base/blob/main/docs/lit"
 nbviewer_root_url =
@@ -47,14 +47,14 @@ isci = get(ENV, "CI", nothing) == "true"
 format = Documenter.HTML(;
     prettyurls = isci,
     edit_link = "main",
-    canonical = "https://$org.github.io/$repo.jl/stable/",
+    canonical = "https://$org.github.io/$repo/stable/",
     assets = ["assets/custom.css"],
 )
 
 makedocs(;
     modules = [repo],
     authors = "Jeff Fessler and contributors",
-    sitename = "$repo.jl",
+    sitename = "$repo",
     format,
     pages = [
         "Home" => "index.md",
@@ -71,6 +71,6 @@ if isci
         versions = ["stable" => "v^", "dev" => "dev"],
         forcepush = true,
 #       push_preview = true,
-        # see https://$org.github.io/$repo.jl/previews/PR##
+        # see https://$org.github.io/$repo/previews/PR##
     )
 end
