@@ -26,6 +26,7 @@ is with the
 [Examples](https://github.com/JuliaImageRecon/Examples)
 collection.
 
+[![docs][docs-img]][docs-url]
 
 ## Repos
 
@@ -60,6 +61,10 @@ that illustrate the Julia code and the output.
 
 * https://github.com/MagneticResonanceImaging, including
   * [MRIReco.jl](https://github.com/MagneticResonanceImaging/MRIReco.jl)
+  * [BartIO.jl](https://github.com/MagneticResonanceImaging/BartIO.jl)
+    for reading
+    [BART](https://mrirecon.github.io/bart) format files.
+  * [MRIFieldmaps.jl](https://github.com/MagneticResonanceImaging/MRIFieldmaps.jl )
 
 * [Michigan Image Reconstruction Toolbox (MIRT)](https://github.com/JeffFessler/MIRT.jl)
 
@@ -67,10 +72,13 @@ that illustrate the Julia code and the output.
   * [Shepp-Logan phantom](https://juliaimages.org/stable/function_reference/#Images.shepp_logan)
   * https://github.com/JuliaImages/ImageView.jl
 
-* https://github.com/JakobAsslaender/BartIO.jl
-  for reading
-  [BART](https://mrirecon.github.io/bart) format files.
+* https://github.com/cncastillo/KomaMRI.jl
 
 * (please make a PR to add more here!)
 
 Established 2021-06-29.  Stay tuned for more content...
+
+
+<!-- URLs -->
+[docs-img]: https://img.shields.io/badge/-MRItogether2022-blue
+[docs-url]: https://JuliaImageRecon.github.io/About

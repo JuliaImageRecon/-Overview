@@ -1,0 +1,7 @@
+name = "About"
+uuid = "234ee3bc-2940-4b4b-8f06-c41da7caf265"
+authors = ["Jeff Fessler <fessler@umich.edu>"]
+version = "0.0.0"
+
+[compat]
+julia = "1.8"
