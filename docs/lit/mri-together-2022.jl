@@ -3,6 +3,7 @@
 
 [https://mritogether.esmrmb.org](https://mritogether.esmrmb.org)
 
+---
 # Session: Expanding your image reconstruction toolbox
 
 # Image Reconstruction Using Julia
@@ -42,6 +43,7 @@ This page was generated from a single Julia file:
 
 
 #=
+---
 ## Together
 
 - Thank you to organizers!
@@ -52,9 +54,11 @@ This page was generated from a single Julia file:
 - Transition from lone actors to teams "together"
 
 
+---
 # Links
 
 - [https://juliaimagerecon.github.io/Examples](https://juliaimagerecon.github.io/Examples)
+  (also has Julia setup instructions)
 - [https://github.com/JeffFessler/MIRT.jl](https://github.com/JeffFessler/MIRT.jl)
   Julia version
 - [https://github.com/guanhuaw/MIRTorch](https://github.com/guanhuaw/MIRTorch)
@@ -68,7 +72,7 @@ This page was generated from a single Julia file:
 - [https://github.com/MagneticResonanceImaging](https://github.com/MagneticResonanceImaging)
 - ...
 
-
+---
 ## Why Julia for image reconstruction?
 
 - Speed:
@@ -103,8 +107,8 @@ This page was generated from a single Julia file:
 
 - Free & open source
 
-
-## Brief history
+---
+## Brief history of Julia
 
 - Started in 2009 around MIT
   (Alan Edelman, Jeff Bezanson, Stefan Karpinski, and Viral B. Shah)
@@ -121,7 +125,9 @@ This page was generated from a single Julia file:
 
 #src syntax comparison?
 
+
 #=
+---
 ## Brief taste of Julia
 
 ### Function definitions
@@ -197,10 +203,14 @@ Since this is an imaging workshop,
 this page must include at least one image...
 =#
 using MIRTjim: jim
-jim(rand(9,9); color=:cividis, title="Random Example")
+x = range(-1,1,15)
+y = range(-1,1,11)
+image = f.(x, y') # broadcast !
+p1 = jim(image; color=:cividis, title="Image Example")
 
 
 #=
+---
 ## "Expanding your image reconstruction toolbox"
 
 - The mega-package approach of BART/MIRT/ASTRA/... in Matlab, Python, C.
@@ -216,10 +226,12 @@ jim(rand(9,9); color=:cividis, title="Random Example")
 
 =#
 
+#=
+---
+### Reproducibility
 
-# ### Reproducibility
-
-# This page was generated with the following version of Julia:
+This page was generated with the following version of Julia:
+=#
 
 using InteractiveUtils: versioninfo
 io = IOBuffer(); versioninfo(io); split(String(take!(io)), '\n')
