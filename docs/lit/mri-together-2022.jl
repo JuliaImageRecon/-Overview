@@ -1,11 +1,29 @@
-#---------------------------------------------------------
-# # [MRItogether2022](@id mri-together-2022)
-#---------------------------------------------------------
+#=
+# [MRI Together Workshop 2022](@id mri-together-2022)
+
+[https://mritogether.esmrmb.org](https://mritogether.esmrmb.org)
+
+# Session: Expanding your image reconstruction toolbox
+
+# Image Reconstruction Using Julia
+- [Jeff Fessler](https://web.eecs.umich.edu/~fessler/),
+  University of Michigan, US,
+- [Tobias Knopp](https://www.tuhh.de/ibi/people/tobias-knopp-head-of-institute.html), Technische Universität Hamburg (TUHH), Germany
+
+Conflicts of interest regarding this presentation:
+Nothing to disclose
+
+The copyright of this presentation belongs to the Speaker.
+This presentation is released under a
+[CC-BY](https://creativecommons.org/licenses/by/4.0) license.
+=#
 
 #=
 This page originates from
 [About](https://github.com/JuliaImageRecon/About)
 and discusses
+[Julia](https://julialang.org)
+and
 Julia packages for image reconstruction.
 
 This page was generated from a single Julia file:
@@ -23,38 +41,18 @@ This page was generated from a single Julia file:
 #md # [`mri-together-2022.ipynb`](@__BINDER_ROOT_URL__/mri-together-2022.ipynb).
 
 
-# ### Setup
-
-# Packages needed here.
-
-using MIRTjim: jim, prompt
-using InteractiveUtils: versioninfo
-
-
-# The following line is helpful when running this file as a script;
-# this way it will prompt user to hit a key after each figure is displayed.
-
-isinteractive() ? jim(:prompt, true) : prompt(:draw);
-
-
 #=
-# MRI together workshop
-[https://mritogether.esmrmb.org](https://mritogether.esmrmb.org)
+## Together
 
-# Session: Expanding your image reconstruction toolbox
+- Thank you to organizers!
+- Ancient history: [Netlib](https://netlib.org)
+  distributing shared math software by email
+  [1987 paper](http://doi.org/10.1145/22899.22904)
+- My [first contribution](https://netlib.org/gcv/vspline) in 1990
+- Transition from lone actors to teams "together"
 
-# Image Reconstruction Using Julia
-- Jeff Fessler, University of Michigan, US,
-- Tobias Knopp, Hamburg University of Technology, Germany
 
-Conflicts of interest regarding this presentation:
-Nothing to disclose
-
-The copyright of this presentation belongs to the Speaker.
-This presentation is released under a
-[CC-BY](https://creativecommons.org/licenses/by/4.0) license.
-
-Key urls:
+# Links
 
 - [https://juliaimagerecon.github.io/Examples](https://juliaimagerecon.github.io/Examples)
 - [https://github.com/JeffFessler/MIRT.jl](https://github.com/JeffFessler/MIRT.jl)
@@ -64,6 +62,12 @@ Key urls:
 - [https://github.com/JeffFessler/mirt](https://github.com/JeffFessler/mirt)
   Matlab version
 
+- [https://github.com/StevenWhitaker/BlochSim.jl](https://github.com/StevenWhitaker/BlochSim.jl)
+- [https://github.com/cncastillo/KomaMRI.jl](https://github.com/cncastillo/KomaMRI.jl)
+- [https://github.com/JuliaMath/NFFT.jl](https://github.com/JuliaMath/NFFT.jl)
+- [https://github.com/MagneticResonanceImaging](https://github.com/MagneticResonanceImaging)
+- ...
+
 
 ## Why Julia for image reconstruction?
 
@@ -72,18 +76,19 @@ Key urls:
   * Easy use of threads, distributed computing, GPU
   * Memory efficient: `Float16`, Sparse of any type, call by ref.
 
-- Ease of use:
-  * interactive development / prototyping
+- Ease of use (solves "2-language problem"):
+  * Interactive development / prototyping
   * Dynamic typing / Jupyter notebooks
+  * Extensive [documentation](https://docs.julialang.org)
 
 - Ease of coding / readability:
   * Readable syntax matches the mathematics of computational imaging
-  * Unicode / UTF-8
+  * Unicode / UTF-8 `α β Ω θ Δ √ ⊗ ∞ …`
   * Built-in operations with numerical arrays
   * Namespace control with `using` and `import`
   * IDE / debuggers: VSCode etc.
   * Code reuse (object oriented): multiple dispatch, subtypes
-  * Best of Matlab, Python, LISP, ...
+  * Combines best of Matlab, Python, LISP, ...
 
 - Libraries:
   * `FFTW` `LAPACK` [`CUDA`](https://github.com/JuliaGPU/CUDA.jl) ...
@@ -93,9 +98,10 @@ Key urls:
 - Reproducibility:
   * `git`, `Pkg`, `Manifest`
   * Julia-based markdown documentation (including this presentation)
-  * continuous integration / code coverage with GitHub Actions
+    using [Literate.jl](https://fredrikekre.github.io/Literate.jl)
+  * Continuous integration / code coverage with GitHub Actions
 
-- Free: open source
+- Free & open source
 
 
 ## Brief history
@@ -116,7 +122,9 @@ Key urls:
 #src syntax comparison?
 
 #=
-## Function definitions
+## Brief taste of Julia
+
+### Function definitions
 
 Ways to define the function
 ``f(x,y) = x^2 + y^3``
@@ -135,7 +143,7 @@ f(4,5)
 
 
 #=
-## Gradient descent example
+### Gradient descent example
 
 To minimize ``f(x)`` using gradient descent
 (for illustration)
@@ -182,16 +190,29 @@ xh = A \ y # global minimizer of f
 xgd = gd(∇f, α, zeros(N) ; Niter=9000)
 @assert xgd ≈ xh # equivalent within precision of type
 
+
+#=
+### Image example
+Since this is an imaging workshop,
+this page must include at least one image...
+=#
+using MIRTjim: jim
+jim(rand(9,9); color=:cividis, title="Random Example")
+
+
 #=
 ## "Expanding your image reconstruction toolbox"
 
-The mega-package approach of BART/MIRT/ASTRA/... in Matlab, Python, C.
+- The mega-package approach of BART/MIRT/ASTRA/... in Matlab, Python, C.
 
-Julia way: "ala carte"
-by `using` methods from various packages.
+- Julia way: "ala carte"
+  by `using` methods from various packages.
 
-Chef's recommended menu?
-Documented examples!
+- Chef's recommended menu?
+  Documented examples!
+
+  - [L+S dynamic MRI recon](https://juliaimagerecon.github.io/Examples/generated/mri/5-l-plus-s)
+  - [MRIFieldmaps.jl](https://github.com/MagneticResonanceImaging/MRIFieldmaps.jl)
 
 =#
 
@@ -200,6 +221,7 @@ Documented examples!
 
 # This page was generated with the following version of Julia:
 
+using InteractiveUtils: versioninfo
 io = IOBuffer(); versioninfo(io); split(String(take!(io)), '\n')
 
 
