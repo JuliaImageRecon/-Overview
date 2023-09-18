@@ -34,6 +34,8 @@ Each of the following code repos include documentation
 that illustrate the Julia code and the output.
 [Here is an example](https://juliaimagerecon.github.io/ImagePhantoms.jl/stable/generated/examples/07-shepp).
 
+* [AbstractImageReconstruction.jl](https://github.com/JuliaImageRecon/AbstractImageReconstruction.jl) Abstract framework for implementing reconstruction algorithms.
+
 * [ImageGeoms.jl](https://github.com/JuliaImageRecon/ImageGeoms.jl) :
   describe image sampling geometry for image reconstruction
   (grid dimensions, pixel size, support mask).
@@ -41,6 +43,8 @@ that illustrate the Julia code and the output.
 * [ImagePhantoms.jl](https://github.com/JuliaImageRecon/ImagePhantoms.jl) :
   Digital image phantoms (like the Shepp-Logan phantom)
   along with analytical methods for their sinograms and spectra.
+
+* [LinearOperatorCollection.jl](https://github.com/JuliaImageRecon/LinearOperatorCollection.jl) Collection of linear operators for signal and image processing.
 
 * [Sinograms.jl](https://github.com/JuliaImageRecon/Sinograms.jl) :
   Tomographic image reconstruction.
@@ -50,6 +54,7 @@ that illustrate the Julia code and the output.
 
 * [SPECTrecon.jl](https://github.com/JuliaImageRecon/SPECTrecon.jl)
   forward and back-projectors for SPECT
+
 
 
 ## Plans (WIP)
