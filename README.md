@@ -56,6 +56,18 @@ that illustrate the Julia code and the output.
   forward and back-projectors for SPECT
 
 
+## About `LinearMapsAA` and `LinearOperators`
+
+This organization has tools that are built either on
+[`LinearMapsAA`](https://github.com/JeffFessler/LinearMapsAA.jl)
+or
+[`LinearOperators`](https://github.com/JuliaSmoothOptimizers/LinearOperators.jl).
+
+There is
+[some inter-operability](https://github.com/JeffFessler/LinearMapsAA.jl#inter-operability)
+between them.
+Submit an issue if further improvements are needed.
+
 
 ## Plans (WIP)
 
