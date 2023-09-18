@@ -47,7 +47,7 @@ that illustrate the Julia code and the output.
   FDK for cone-beam computed-tomography CBCT.
   (Forward and back-projectors for CT are a WIP.)
 
-* [SPECTrecon.jl](https://github.com/JeffFessler/SPECTrecon.jl)
+* [SPECTrecon.jl](https://github.com/JuliaImageRecon/SPECTrecon.jl)
   forward and back-projectors for SPECT
 
 
